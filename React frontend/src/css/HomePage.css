@@ -36,21 +36,12 @@
   font-weight: 500;
   transition: background-color 0.2s;
   white-space: nowrap;
+  border: none;
+  cursor: pointer;
 }
 
 .search-button:hover {
   background-color: #f40612;
-}
-
-
-@media (max-width: 639px) {
-  .home {
-    padding: 1rem 0;
-  }
-
-  .search-form {
-    margin-bottom: 1rem;
-  }
 }
 
 .movies-grid {
@@ -60,4 +51,54 @@
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 1.5rem 0;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 1rem 0;
+  }
+
+  .search-form {
+    padding: 0 0.5rem;
+  }
+
+  .search-input {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .search-button {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+    padding: 0.5rem;
+  }
 }
