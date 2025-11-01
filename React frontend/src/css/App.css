@@ -1,8 +1,79 @@
-.main-content {
-  flex: 1;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* RESPONSIVE GRID for MOVIE CARDS */
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* MOVIE CARD STYLE */
+.movie-card {
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.movie-card img {
   width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE NAVBAR */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* For smaller phones */
+@media (max-width: 480px) {
+  .movie-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .navbar-links a {
+    font-size: 14px;
+  }
 }
